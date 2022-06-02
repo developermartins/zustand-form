@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
 import TheForm from './components/TheForm';
-import './index.css'
 import useStore from './store/appStore';
 
 function App() {
