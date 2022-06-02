@@ -14,7 +14,9 @@ function App() {
         <p>We have {heroes.length} heroes added</p>
         <h4>Heroes list</h4>
         <ul>
-            {  heroes.map((hero) => ( <li>{hero.firstName}</li> ))  }
+            {  heroes.map((hero) => ( 
+                <li>{hero.firstName}</li>
+            ))  }
         </ul>
     </div>
   );
