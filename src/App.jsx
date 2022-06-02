@@ -1,10 +1,10 @@
 
 import React, { useEffect } from 'react';
 import TheForm from './components/TheForm';
+import TheList from './components/TheList';
 import useStore from './store/appStore';
 
 function App() {
-    const heroes = useStore(state => state.heroes);
     const toggleDarkMode = useStore(state => state.setDark);
     const dark = useStore(state => state.darkMode);
 
@@ -23,13 +23,8 @@ function App() {
         <button onClick={toggleDarkMode}>🌓</button>
         <br />
         <br />
-        <p>We have {heroes.length} heroes added</p>
         <h4>Heroes list</h4>
-        <ul>
-            {  heroes.map((hero) => ( 
-                <li>{hero.firstName} {hero.lastName}</li>
-            ))  }
-        </ul>
+        <TheList />
     </div>
   );
 };
