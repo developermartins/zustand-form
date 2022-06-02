@@ -1,14 +1,27 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import TheForm from './components/TheForm';
+import './index.css'
 import useStore from './store/appStore';
 
 function App() {
     const heroes = useStore(state => state.heroes)
+    const toggleDarkMode = useStore(state => state.setDark)
+    const dark = useStore(state => state.darkMode)
+
+    useEffect(() => {
+        if(dark) {
+            document.querySelector('body').classList.add('dark')
+        } else {
+            document.querySelector('body').classList.remove('dark')
+        }
+    }, [dark])
+
 
   return (
     <div>
         <TheForm />
+        <button onClick={toggleDarkMode}>🌓</button>
         <br />
         <br />
         <p>We have {heroes.length} heroes added</p>
