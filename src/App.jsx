@@ -4,17 +4,17 @@ import TheForm from './components/TheForm';
 import useStore from './store/appStore';
 
 function App() {
-    const heroes = useStore(state => state.heroes)
-    const toggleDarkMode = useStore(state => state.setDark)
-    const dark = useStore(state => state.darkMode)
+    const heroes = useStore(state => state.heroes);
+    const toggleDarkMode = useStore(state => state.setDark);
+    const dark = useStore(state => state.darkMode);
 
     useEffect(() => {
         if(dark) {
-            document.querySelector('body').classList.add('dark')
+            document.querySelector('body').classList.add('dark');
         } else {
-            document.querySelector('body').classList.remove('dark')
-        }
-    }, [dark])
+            document.querySelector('body').classList.remove('dark');
+        };
+    }, [dark]);
 
 
   return (
@@ -27,7 +27,7 @@ function App() {
         <h4>Heroes list</h4>
         <ul>
             {  heroes.map((hero) => ( 
-                <li>{hero.firstName}</li>
+                <li>{hero.firstName} {hero.lastName}</li>
             ))  }
         </ul>
     </div>

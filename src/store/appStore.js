@@ -5,11 +5,11 @@ const useStore = create(set => ({
     darkMode: false,
 
     setHeroes: (value) => {
-        set((state) => ({  heroes: [...state.heroes, value]  }))
+        set((state) => ({  heroes: [...state.heroes, value]  }));
     },
     
     setDark: () => {
-        set((state) => ({ darkMode: !state.darkMode }))
+        set((state) => ({ darkMode: !state.darkMode }));
     }
 }));
 
